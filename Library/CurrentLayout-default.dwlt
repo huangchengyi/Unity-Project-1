@@ -133,7 +133,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 0
     y: 0
-    width: 1028
+    width: 1026
     height: 731
   m_MinSize: {x: 201, y: 221}
   m_MaxSize: {x: 4001, y: 4021}
@@ -160,14 +160,14 @@ MonoBehaviour:
   - {fileID: 9}
   m_Position:
     serializedVersion: 2
-    x: 1028
+    x: 1026
     y: 0
     width: 232
     height: 731
   m_MinSize: {x: 232, y: 492}
   m_MaxSize: {x: 10002, y: 14042}
   vertical: 1
-  controlID: 53
+  controlID: 72
 --- !u!114 &8
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -235,9 +235,9 @@ MonoBehaviour:
   m_Children: []
   m_Position:
     serializedVersion: 2
-    x: 1260
+    x: 1258
     y: 0
-    width: 276
+    width: 278
     height: 731
   m_MinSize: {x: 276, y: 71}
   m_MaxSize: {x: 4001, y: 4021}
@@ -269,7 +269,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 0
     y: 73.6
-    width: 1027
+    width: 1025
     height: 710
   m_ViewDataDictionary: {fileID: 0}
   m_ShowContextualTools: 0
@@ -282,9 +282,9 @@ MonoBehaviour:
   m_PlayAudio: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: 10, y: 3.1215284, z: 10}
+    m_Target: {x: 10.201788, y: 3.33205, z: 6.570659}
     speed: 2
-    m_Value: {x: 9.999996, y: 3.1215286, z: 10}
+    m_Value: {x: 10.201788, y: 3.33205, z: 6.570659}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -313,13 +313,13 @@ MonoBehaviour:
       speed: 2
       m_Value: 0
   m_Rotation:
-    m_Target: {x: 0.29748285, y: -0.10341898, z: 0.032431368, w: 0.94855905}
+    m_Target: {x: -0.490165, y: 0.018307755, z: -0.010295286, w: -0.8713814}
     speed: 2
-    m_Value: {x: 0.29757768, y: -0.10057247, z: 0.031538658, w: 0.9488615}
+    m_Value: {x: -0.49014693, y: 0.019614724, z: -0.011030476, w: -0.87134933}
   m_Size:
-    m_Target: 47.792377
+    m_Target: 21.182388
     speed: 2
-    m_Value: 47.792336
+    m_Value: 22.180511
   m_Ortho:
     m_Target: 0
     speed: 2
@@ -447,7 +447,7 @@ MonoBehaviour:
     m_Tooltip: 
   m_Pos:
     serializedVersion: 2
-    x: 1028
+    x: 1026.4
     y: 73.6
     width: 230
     height: 300
@@ -455,8 +455,8 @@ MonoBehaviour:
   m_SceneHierarchy:
     m_TreeViewState:
       scrollPos: {x: 0, y: 0}
-      m_SelectedIDs: 122d0000
-      m_LastClickedID: 0
+      m_SelectedIDs: 1e330000
+      m_LastClickedID: 13086
       m_ExpandedIDs: 7cfbffff
       m_RenameOverlay:
         m_UserAcceptedRename: 0
@@ -502,7 +502,7 @@ MonoBehaviour:
     m_Tooltip: 
   m_Pos:
     serializedVersion: 2
-    x: 1028
+    x: 1026.4
     y: 394.4
     width: 230
     height: 389
@@ -519,8 +519,7 @@ MonoBehaviour:
     m_ShowAllHits: 0
     m_SkipHidden: 0
     m_SearchArea: 4
-    m_Folders:
-    - Assets/TinyTerrain/Editor/Textures
+    m_Folders: []
   m_ViewMode: 0
   m_StartGridSize: 16
   m_LastFolders:
@@ -533,7 +532,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 0c380000
     m_LastClickedID: 14348
-    m_ExpandedIDs: 00000000683300006a3300006c3300006e33000070330000723300007433000076330000783300007a330000
+    m_ExpandedIDs: 000000005a3300005c3300005e33000060330000623300006433000066330000683300006a3300006c3300006e33000070330000723300007433000076330000783300007a3300007c3300007e3300008033000082330000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -558,10 +557,10 @@ MonoBehaviour:
       m_Icon: {fileID: 0}
       m_ResourceFile: 
   m_AssetTreeState:
-    scrollPos: {x: 0, y: 531}
+    scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: e4c4ffffffffffff00000000683300006a3300006c3300006e33000070330000723300007433000076330000783300007a330000b8330000ba330000be330000c0330000ca330000cc330000ce330000d6330000e2330000f433000000340000
+    m_ExpandedIDs: ffffffff000000005a3300005c3300005e33000060330000623300006433000066330000683300006a3300006e33000070330000723300007433000076330000783300007a3300007c3300007e3300008033000082330000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -638,9 +637,9 @@ MonoBehaviour:
     m_Tooltip: 
   m_Pos:
     serializedVersion: 2
-    x: 1260
+    x: 1258.4
     y: 73.6
-    width: 275
+    width: 277
     height: 710
   m_ViewDataDictionary: {fileID: 0}
   m_OpenAddComponentMenu: 0

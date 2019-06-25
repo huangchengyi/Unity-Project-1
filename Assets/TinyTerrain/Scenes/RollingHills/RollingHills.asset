@@ -54,4 +54,4 @@ MonoBehaviour:
   ProcessSurface: {fileID: 0}
   DetesselationLevel: 0.5
   Prefabs: []
-  TerrainInstanceId: -580280
+  TerrainInstanceId: 13086
