@@ -60,6 +60,15 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\Invector-3rdPersonController\Basic Locomotion LITE\Scripts\Camera\vThirdPersonCamera.cs" />
+    <Compile Include="Assets\Invector-3rdPersonController\Basic Locomotion LITE\Scripts\CharacterController\vThirdPersonAnimator.cs" />
+    <Compile Include="Assets\Invector-3rdPersonController\Basic Locomotion LITE\Scripts\CharacterController\vThirdPersonController.cs" />
+    <Compile Include="Assets\Invector-3rdPersonController\Basic Locomotion LITE\Scripts\CharacterController\vThirdPersonInput.cs" />
+    <Compile Include="Assets\Invector-3rdPersonController\Basic Locomotion LITE\Scripts\CharacterController\vThirdPersonMotor.cs" />
+    <Compile Include="Assets\Invector-3rdPersonController\Basic Locomotion LITE\Scripts\Generic\vComment.cs" />
+    <Compile Include="Assets\Invector-3rdPersonController\Basic Locomotion LITE\Scripts\Generic\vDestroyGameObject.cs" />
+    <Compile Include="Assets\Invector-3rdPersonController\Basic Locomotion LITE\Scripts\Generic\vExtensions.cs" />
+    <Compile Include="Assets\Invector-3rdPersonController\Basic Locomotion LITE\Scripts\Generic\vPickupItem.cs" />
     <Compile Include="Assets\TinyTerrain\Scripts\Rotate.cs" />
     <Compile Include="Assets\TinyTerrain\Standard Assets\Water\Scripts\Displace.cs" />
     <Compile Include="Assets\TinyTerrain\Standard Assets\Water\Scripts\GerstnerDisplace.cs" />
@@ -69,6 +78,8 @@
     <Compile Include="Assets\TinyTerrain\Standard Assets\Water\Scripts\Water.cs" />
     <Compile Include="Assets\TinyTerrain\Standard Assets\Water\Scripts\WaterBase.cs" />
     <Compile Include="Assets\TinyTerrain\Standard Assets\Water\Scripts\WaterTile.cs" />
+    <None Include="Assets\Invector-3rdPersonController\Basic Locomotion LITE\README_Basic.txt" />
+    <None Include="Assets\laxer tree pkg\README.txt" />
     <None Include="Assets\TinyTerrain\Materials\TerrainSurface.shader" />
     <None Include="Assets\TinyTerrain\Standard Assets\Water\Shaders\FXWaterPro.shader" />
     <None Include="Assets\TinyTerrain\Standard Assets\Skyboxes\_skybox info.txt" />
