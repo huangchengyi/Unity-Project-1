@@ -75,6 +75,7 @@
     <Compile Include="Assets\TinyTerrain\Editor\Textures\FractalAndDensityNormal.cs" />
     <Compile Include="Assets\TinyTerrain\Editor\Vegetation\Plants.cs" />
     <Compile Include="Assets\TinyTerrain\Editor\Vegetation\Vegetation.cs" />
+    <Compile Include="Assets\unity-chan!\Unity-chan! Model\Editor\CreateLocatorHere.cs" />
     <Reference Include="UnityEditor.TestRunner">
       <HintPath>E:/unity/Unity Project Workspace/Unity Project 1/Library/ScriptAssemblies/UnityEditor.TestRunner.dll</HintPath>
     </Reference>

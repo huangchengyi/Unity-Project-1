@@ -8,6 +8,8 @@ public class Hero : MonoBehaviour
 
     public NavMeshAgent agent;
 
+    public Animator anim;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -27,7 +29,16 @@ public class Hero : MonoBehaviour
                 //print(hit.point);
 
                 agent.SetDestination(hit.point);
+                //鼠标左键点击位置为人物移动最终位置
             }
         }
+        Cursor.visible = true;
+
+        //保持鼠标不隐藏
+
+        Cursor.lockState = 0;
+
+        anim.SetFloat("speed", agent.velocity.magnitude);
+
     }
 }
