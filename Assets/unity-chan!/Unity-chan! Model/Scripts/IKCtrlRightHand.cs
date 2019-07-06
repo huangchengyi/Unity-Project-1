@@ -3,7 +3,7 @@
 //
 //Sample script for IK Control of Unity-Chan's right hand.
 //
-//2014/06/20 N.Kobayashi
+// N.Kobayashi
 //
 using UnityEngine;
 using System.Collections;

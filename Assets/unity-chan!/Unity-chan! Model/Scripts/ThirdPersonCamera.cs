@@ -1,7 +1,7 @@
 ﻿//
-// Unityちゃん用の三人称カメラ
+// Unity用第三人称相机
 // 
-// 2013/06/07 N.Kobyasahi
+//  N.Kobyasahi
 //
 using UnityEngine;
 using System.Collections;
@@ -10,19 +10,19 @@ namespace UnityChan
 {
 	public class ThirdPersonCamera : MonoBehaviour
 	{
-		public float smooth = 3f;		// カメラモーションのスムーズ化用変数
-		Transform standardPos;			// the usual position for the camera, specified by a transform in the game
+		public float smooth = 3f;       // 照相机动作的平滑变数
+        Transform standardPos;			// the usual position for the camera, specified by a transform in the game
 		Transform frontPos;			// Front Camera locater
-		Transform jumpPos;			// Jump Camera locater
-	
-		// スムーズに繋がない時（クイック切り替え）用のブーリアンフラグ
-		bool bQuickSwitch = false;	//Change Camera Position Quickly
+		Transform jumpPos;          // Jump Camera locater
+
+        // 不能顺利连接时(快速切换)的提升标志
+        bool bQuickSwitch = false;	//Change Camera Position Quickly
 	
 	
 		void Start ()
 		{
-			// 各参照の初期化
-			standardPos = GameObject.Find ("CamPos").transform;
+            // 参照的初始化
+            standardPos = GameObject.Find ("CamPos").transform;
 		
 			if (GameObject.Find ("FrontPos"))
 				frontPos = GameObject.Find ("FrontPos").transform;
@@ -30,35 +30,35 @@ namespace UnityChan
 			if (GameObject.Find ("JumpPos"))
 				jumpPos = GameObject.Find ("JumpPos").transform;
 
-			//カメラをスタートする
-			transform.position = standardPos.position;	
+            //开始照相机
+            transform.position = standardPos.position;	
 			transform.forward = standardPos.forward;	
 		}
 	
-		void FixedUpdate ()	// このカメラ切り替えはFixedUpdate()内でないと正常に動かない
-		{
+		void FixedUpdate () // 该照相机的开关如果不是在FixedUpdate内，就不能正常运转。
+        {
 		
-			if (Input.GetButton ("Fire1")) {	// left Ctlr	
-				// Change Front Camera
-				setCameraPositionFrontView ();
-			} else if (Input.GetButton ("Fire2")) {	//Alt	
-				// Change Jump Camera
-				setCameraPositionJumpView ();
-			} else {	
-				// return the camera to standard position and direction
-				setCameraPositionNormalView ();
+			if (Input.GetButton ("Fire1")) {    // left Ctlr	
+                                                // 改变前置摄像头
+                setCameraPositionFrontView();
+			} else if (Input.GetButton ("Fire2")) { //Alt	
+                                                    // 改变跳相机
+                setCameraPositionJumpView();
+			} else {
+                // 将相机恢复到标准位置和方向
+                setCameraPositionNormalView();
 			}
 		}
 
 		void setCameraPositionNormalView ()
 		{
 			if (bQuickSwitch == false) {
-				// the camera to standard position and direction
-				transform.position = Vector3.Lerp (transform.position, standardPos.position, Time.fixedDeltaTime * smooth);	
+                // 相机到标准位置和方向
+                transform.position = Vector3.Lerp (transform.position, standardPos.position, Time.fixedDeltaTime * smooth);	
 				transform.forward = Vector3.Lerp (transform.forward, standardPos.forward, Time.fixedDeltaTime * smooth);
 			} else {
-				// the camera to standard position and direction / Quick Change
-				transform.position = standardPos.position;	
+                // 相机到标准位置和方向/快速变化
+                transform.position = standardPos.position;	
 				transform.forward = standardPos.forward;
 				bQuickSwitch = false;
 			}
@@ -66,16 +66,16 @@ namespace UnityChan
 	
 		void setCameraPositionFrontView ()
 		{
-			// Change Front Camera
-			bQuickSwitch = true;
+            // 改变前置摄像头
+            bQuickSwitch = true;
 			transform.position = frontPos.position;	
 			transform.forward = frontPos.forward;
 		}
 
 		void setCameraPositionJumpView ()
 		{
-			// Change Jump Camera
-			bQuickSwitch = false;
+            // 改变跳相机
+            bQuickSwitch = false;
 			transform.position = Vector3.Lerp (transform.position, jumpPos.position, Time.fixedDeltaTime * smooth);	
 			transform.forward = Vector3.Lerp (transform.forward, jumpPos.forward, Time.fixedDeltaTime * smooth);		
 		}

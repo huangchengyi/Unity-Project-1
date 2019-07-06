@@ -3,69 +3,71 @@ using System.Collections;
 
 namespace UnityChan
 {
-//
-// ↑↓キーでループアニメーションを切り替えるスクリプト（ランダム切り替え付き）Ver.3
-// 2014/04/03 N.Kobayashi
-//
+    //
+    // ↑↓切换循环动画的脚本(随机切换)Ver.3
+    //  N.Kobayashi
+    //
 
-// Require these components when using this script
-	[RequireComponent(typeof(Animator))]
+    // 使用此脚本时需要这些组件
+    [RequireComponent(typeof(Animator))]
 
 
 
 	public class IdleChanger : MonoBehaviour
 	{
 	
-		private Animator anim;						// Animatorへの参照
-		private AnimatorStateInfo currentState;		// 現在のステート状態を保存する参照
-		private AnimatorStateInfo previousState;	// ひとつ前のステート状態を保存する参照
-		public bool _random = false;				// ランダム判定スタートスイッチ
-		public float _threshold = 0.5f;				// ランダム判定の閾値
-		public float _interval = 10f;				// ランダム判定のインターバル
-		//private float _seed = 0.0f;					// ランダム判定用シード
-	
+		private Animator anim;                      // 参照Animator
+        private AnimatorStateInfo currentState;     // 保存现在的状态的参照
+        private AnimatorStateInfo previousState;    // 参见上一个状态保存
+        public bool _random = false;                // 随机判定开始开关
+        public float _threshold = 0.5f;             // 随机确定的阈值
+        public float _interval = 10f;               // 随机判定的间隔
+                                                    //private float _seed = 0.0f;					// 随机确定种子
 
 
-		// Use this for initialization
-		void Start ()
+
+
+
+        // Use this for initialization
+        void Start ()
 		{
-			// 各参照の初期化
-			anim = GetComponent<Animator> ();
+            // 初始化引用
+            anim = GetComponent<Animator> ();
 			currentState = anim.GetCurrentAnimatorStateInfo (0);
 			previousState = currentState;
-			// ランダム判定用関数をスタートする
-			StartCoroutine ("RandomChange");
+            // 启动随机确定函数
+            StartCoroutine("RandomChange");
 		}
 	
 		// Update is called once per frame
 		void  Update ()
 		{
-			// ↑キー/スペースが押されたら、ステートを次に送る処理
-			if (Input.GetKeyDown ("up") || Input.GetButton ("Jump")) {
-				// ブーリアンNextをtrueにする
-				anim.SetBool ("Next", true);
+            // ↑按下键/空格后，下一步发送状态的处理
+            if (Input.GetKeyDown ("up") || Input.GetButton ("Jump")) {
+                // 把布利安Next变成true
+                anim.SetBool ("Next", true);
 			}
-		
-			// ↓キーが押されたら、ステートを前に戻す処理
-			if (Input.GetKeyDown ("down")) {
-				// ブーリアンBackをtrueにする
-				anim.SetBool ("Back", true);
+
+            // ↓按下键后，将状态返回前方的处理
+            if (Input.GetKeyDown ("down")) {
+                // 把布利安Back变成true
+                anim.SetBool ("Back", true);
 			}
-		
-			// "Next"フラグがtrueの時の処理
-			if (anim.GetBool ("Next")) {
-				// 現在のステートをチェックし、ステート名が違っていたらブーリアンをfalseに戻す
-				currentState = anim.GetCurrentAnimatorStateInfo (0);
+
+            //"Next"标志为true时的处理
+            if (anim.GetBool ("Next")) {
+                // 检查当前状态，如果状态名不对，请将布利安返回到false
+                currentState = anim.GetCurrentAnimatorStateInfo (0);
 				if (previousState.nameHash != currentState.nameHash) {
 					anim.SetBool ("Next", false);
 					previousState = currentState;				
 				}
 			}
-		
-			// "Back"フラグがtrueの時の処理
-			if (anim.GetBool ("Back")) {
-				// 現在のステートをチェックし、ステート名が違っていたらブーリアンをfalseに戻す
-				currentState = anim.GetCurrentAnimatorStateInfo (0);
+
+            // "Back"标志为true时的处理
+            if (anim.GetBool ("Back")) {
+                // 检查当前状态，如果状态名不对，请将布利安返回到false
+                currentState = anim.GetCurrentAnimatorStateInfo (0);
 				if (previousState.nameHash != currentState.nameHash) {
 					anim.SetBool ("Back", false);
 					previousState = currentState;
@@ -83,23 +85,23 @@ namespace UnityChan
 		}
 
 
-		// ランダム判定用関数
-		IEnumerator RandomChange ()
+        // 随机确定函数
+        IEnumerator RandomChange ()
 		{
-			// 無限ループ開始
-			while (true) {
-				//ランダム判定スイッチオンの場合
-				if (_random) {
-					// ランダムシードを取り出し、その大きさによってフラグ設定をする
-					float _seed = Random.Range (0.0f, 1.0f);
+            // 无限循环开始
+            while (true) {
+                //在随机判定开关开启的情况下
+                if (_random) {
+                    // 取出随机种子，根据其大小设置标记
+                    float _seed = Random.Range (0.0f, 1.0f);
 					if (_seed < _threshold) {
 						anim.SetBool ("Back", true);
 					} else if (_seed >= _threshold) {
 						anim.SetBool ("Next", true);
 					}
 				}
-				// 次の判定までインターバルを置く
-				yield return new WaitForSeconds (_interval);
+                // 将间隔放到下一个判定
+                yield return new WaitForSeconds (_interval);
 			}
 
 		}

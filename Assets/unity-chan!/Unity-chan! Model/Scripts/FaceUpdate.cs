@@ -41,10 +41,10 @@ namespace UnityChan
 			}
 			anim.SetLayerWeight (1, current);
 		}
-	 
 
-		//アニメーションEvents側につける表情切り替え用イベントコール
-		public void OnCallChangeFace (string str)
+
+        //Events动画Events侧，切换表情活动呼叫
+        public void OnCallChangeFace (string str)
 		{   
 			int ichecked = 0;
 			foreach (var animation in animations) {
@@ -54,8 +54,8 @@ namespace UnityChan
 				} else if (ichecked <= animations.Length) {
 					ichecked++;
 				} else {
-					//str指定が間違っている時にはデフォルトで
-					str = "default@unitychan";
+                    //当str指定不正确时
+                    str = "default@unitychan";
 					ChangeFace (str);
 				}
 			} 
